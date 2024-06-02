@@ -27,16 +27,16 @@ class Game:
         y = self.height + self.yOffset
         for x in range(self.currentNotes, self.currentNotes+16):
             if self.notePattern[x].a:
-                self.canvas.create_oval(200,y-10,220,y)
+                self.canvas.create_oval(200,y-15,220,y)
             if self.notePattern[x].b:
-                self.canvas.create_oval(245,y-10,265,y)
+                self.canvas.create_oval(245,y-15,265,y)
             if self.notePattern[x].c:
-                self.canvas.create_oval(290,y-10,310,y)
+                self.canvas.create_oval(290,y-15,310,y)
             if self.notePattern[x].d:
-                self.canvas.create_oval(335,y-10,355,y)
+                self.canvas.create_oval(335,y-15,355,y)
             if self.notePattern[x].e:
-                self.canvas.create_oval(380,y-10,400,y)
-            if y == (self.height-80):
+                self.canvas.create_oval(380,y-15,400,y)
+            if y == (self.height-84):
                 print("settin currentline to b ", self.notePattern[x].b)
                 if (self.currentLine.a or self.currentLine.b or self.currentLine.c or self.currentLine.d or self.currentLine.e):
                     self.multiplier = 1
@@ -51,7 +51,6 @@ class Game:
     def update(self):
         self.updateNotes()
         self.window.update()
-        #time.sleep(.0001)
         self.canvas.delete("all")
         self.canvas.create_line(200, 0, 200, self.height, fill="black", width=5)
         self.canvas.create_line(self.width-200, 0, self.width-200, self.height, fill="black", width=5)
